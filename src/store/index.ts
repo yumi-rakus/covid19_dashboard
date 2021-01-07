@@ -1,9 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
 import {useSelector as rawUseSelector, TypedUseSelectorHook} from "react-redux";
+import covidReducer from '../store/slices/covidSlice';
 
 export const store = configureStore({
     reducer: {
-
+        covid: covidReducer
     }
 });
 
