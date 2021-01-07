@@ -2,6 +2,7 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 
 import dataDailyJson from '../../types/apiDataDaily.json'
+import {RootState} from "../index";
 
 // ベースのURL
 const apiUrl = 'https://api.covid19api.com/total/country';
@@ -56,5 +57,9 @@ const covidSlice = createSlice({
         });
     }
 });
+
+// React Componentからstateを参照するための関数を定義
+export const selectDataDaily = (state: RootState) => state.covid.dataDaily;
+export const selectCountry = (state: RootState) => state.covid.country;
 
 export default covidSlice.reducer;
