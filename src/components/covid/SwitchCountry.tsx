@@ -1,6 +1,6 @@
 import React from "react";
 
-const PieChart: React.FC = () => {
+const SwitchCountry: React.FC = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const PieChart: React.FC = () => {
     );
 };
 
-export default PieChart;
+export default SwitchCountry;
