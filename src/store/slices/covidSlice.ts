@@ -30,9 +30,31 @@ export const fetchDataDaily = createAsyncThunk('covid/getDaily', async (country:
 
 
 const covidSlice = createSlice({
+    // Sliceの名称
     name: 'covid',
+
+    // Stateの初期状態　
     initialState: initialState,
-    reducers: {}
+
+    // Stateに対して許可する更新処理を定義する場所(ただし非同期処理は書けない)
+    reducers: {},
+
+    // 必要に応じて追加のReducerを指定できる
+    // 別のSliceで生成されたActionに反応したい場合や非同期処理に対して
+    extraReducers: (builder) => {
+        // addCase:　
+        // 第一引数　非同期処理の状態　
+        //         (pending: 非同期処理中, fulfilled: 非同期処理の成功時, rejected: 非同期処理の失敗時)
+        // 第二引数  reducer
+        builder.addCase(fetchDataDaily.fulfilled, (state, action) => {
+            // スプレッド構文
+            return {
+                ...state, // クローン
+                dataDaily: action.payload.data, // 上書き
+                country: action.payload.country // 上書き
+            }
+        });
+    }
 });
 
 export default covidSlice.reducer;
