@@ -1,24 +1,13 @@
 import React from 'react';
 import './assets/css/App.css';
+import Cards from "./components/covid/Cards";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Cards/>
+        </div>
+    );
 }
 
 export default App;
