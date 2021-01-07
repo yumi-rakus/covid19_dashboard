@@ -7,9 +7,9 @@
     "CityCode": "",
     "Lat": "0",
     "Lon": "0",
-    "Confirmed": 0,
-    "Deaths": 0,
-    "Recovered": 0,
+    "Confirmed": 1600,
+    "Deaths": 600,
+    "Recovered": 1000,
     "Active": 0,
     "Date": "2020-01-22T00:00:00Z"
   }
