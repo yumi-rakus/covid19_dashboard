@@ -59,6 +59,7 @@ const covidSlice = createSlice({
 });
 
 // React Componentからstateを参照するための関数を定義
+// React Componentでこの関数をimport後、useSelectorを用いて各値を参照することができる
 export const selectDataDaily = (state: RootState) => state.covid.dataDaily;
 export const selectCountry = (state: RootState) => state.covid.country;
 
