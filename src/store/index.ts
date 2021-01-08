@@ -1,5 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {useSelector as rawUseSelector, TypedUseSelectorHook} from "react-redux";
+// import {useSelector as rawUseSelector, TypedUseSelectorHook} from "react-redux";
 import covidReducer from '../store/slices/covidSlice';
 
 export const store = configureStore({
@@ -12,4 +12,4 @@ export const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 
 // 型情報付きのuseSelectorをここで宣言
-export const useSelector: TypedUseSelectorHook<RootState> = rawUseSelector;
+//export const useSelector: TypedUseSelectorHook<RootState> = rawUseSelector;
