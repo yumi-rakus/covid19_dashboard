@@ -1,17 +1,11 @@
 import React from 'react';
 import './assets/css/App.css';
-import Cards from "./components/covid/Cards";
-import Chart from "./components/covid/Chart";
-import PieChart from "./components/covid/PieChart";
-import SwitchCountry from "./components/covid/SwitchCountry";
+import DashBoard from "./components/covid/DashBoard";
 
 function App() {
     return (
         <div>
-            <Cards/>
-            <Chart/>
-            <PieChart/>
-            <SwitchCountry/>
+            <DashBoard/>
         </div>
     );
 }
