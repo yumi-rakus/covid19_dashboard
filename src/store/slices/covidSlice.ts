@@ -14,12 +14,14 @@ type DATA_DAILY = typeof dataDailyJson;
 type covidState = {
     dataDaily: DATA_DAILY;
     country: string;
+    isLoading: boolean;
 };
 
 // stateの初期値
 const initialState: covidState = {
     dataDaily: dataDailyJson,
-    country: 'Japan'
+    country: 'Japan',
+    isLoading: true
 };
 
 // createAsyncThunk: 非同期に対応したAction Creator
@@ -52,7 +54,8 @@ const covidSlice = createSlice({
             return {
                 ...state, // クローン
                 dataDaily: action.payload.data, // 上書き
-                country: action.payload.country // 上書き
+                country: action.payload.country, // 上書き
+                isLoading: false
             }
         });
     }
@@ -62,5 +65,6 @@ const covidSlice = createSlice({
 // React Componentでこの関数をimport後、useSelectorを用いて各値を参照することができる
 export const selectDataDaily = (state: RootState) => state.covid.dataDaily;
 export const selectCountry = (state: RootState) => state.covid.country;
+export const selectIsLoading = (state: RootState) => state.covid.isLoading;
 
 export default covidSlice.reducer;
